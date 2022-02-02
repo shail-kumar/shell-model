@@ -1,0 +1,11 @@
+#~ Only to execute a binary
+TARGET ?= $(shell bash -c 'read -p "Target name: " pwd; echo $$pwd')
+#num_procs ?= $(shell bash -c 'read -p "No of procceses: " pwd; echo $$pwd')
+
+#~ Keep one extra process for master process
+num_procs=2
+OMP = -fopenmp
+	
+run:
+	@mpirun -np $(num_procs) ./shell_$(TARGET)
+#~ 	 | tee stdout.d

@@ -1,0 +1,13 @@
+#! /bin/bash
+
+echo "Setup begins ..."
+
+mkdir ../binaries ../input ../output
+echo "Three directories created in the parent directory."
+cp parameters.d initial_field.d ../input/
+echo "input/ directory is populated."
+cp environment.d Makefile_binary ../binaries/
+mv ../binaries/Makefile_binary ../binaries/Makefile
+echo "binaries/ directory is populated."
+
+echo "Setup successfull!"
